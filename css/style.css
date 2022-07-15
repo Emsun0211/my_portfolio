@@ -42,9 +42,11 @@ body{
    color: #fff;
    display: flex;
    justify-content: space-between;
+   align-items: center;
    z-index: 1;
    padding: 1.3rem;
    width: 100%;
+   height: 80px;
 }
 
 #nav_header #logo{
@@ -76,6 +78,9 @@ body{
     width: 40px;
     height: 40px;
     color: #fff;
+    /* position: absolute;
+    top: 0.75rem;
+    right: 0.75rem; */
     display: none;
 }
 
@@ -370,18 +375,51 @@ body{
     #about-container .about-content #about-img{
         margin-bottom: 0.75rem;
     }
+    
+    .nav-bar{
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        /* opacity: 80vh; */
+        opacity: 0;
+    }
+    .display-nav{
+        opacity: 1;
+        height: 80vh;
+    }
+
+    #nav_header .nav-bar ul{
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        /* height: 80vh; */
+    }
+
+    #nav_header ul li{
+        margin: 3rem 0.75rem;
+    }
 
     #nav_header #logo svg{
         width: 16px;
         height: 16px;
     }
 
+    .list svg{
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .list svg:hover {
+        background-color: #666;
+    }
+
     #nav_header #logo{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
-@media (max-width: 768px) and (min-width: 501px){
+@media (max-width: 900px) and (min-width: 501px){
     #about-container .about-content{
         flex-direction: column-reverse;
     }
@@ -392,6 +430,39 @@ body{
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
     'gallery-header gallery-header'
+    }
+
+    .nav-bar{
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        opacity: 80vh;
+        opacity: 0;
+    }
+    .display-nav{
+        opacity: 1;
+        height: 80vh;
+    }
+
+    #nav_header .nav-bar ul{
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        /* height: 80vh; */
+    }
+
+    #nav_header ul li{
+        margin: 3rem 0.75rem;
+    }
+
+    .list svg{
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .list svg:hover {
+        background-color: #666;
     }
 }
 .gallery-header{grid-area: gallery-header;}
@@ -409,6 +480,7 @@ body{
 .contact-details{
     text-align: center;
 }
+
 
 @media (min-width: 1100px){
     #project-container{
